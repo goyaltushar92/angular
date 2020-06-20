@@ -15,8 +15,8 @@
  *
  * @publicApi
  */
-export class SimpleChange {
-  constructor(public previousValue: any, public currentValue: any, public firstChange: boolean) {}
+export class SimpleChange<T = any> {
+  constructor(public previousValue: T, public currentValue: T, public firstChange: boolean) {}
   /**
    * Check whether the new value is the first value assigned.
    */
@@ -34,6 +34,6 @@ export class SimpleChange {
  *
  * @publicApi
  */
-export interface SimpleChanges {
-  [propName: string]: SimpleChange;
+export type SimpleChanges<T = any> = {
+  [propName in keyof T]: SimpleChange<T[propName]>;
 }
