@@ -33,7 +33,7 @@ export interface OnChanges {
    * children are checked.
    * @param changes The changed properties.
    */
-  ngOnChanges(changes: SimpleChanges): void;
+  ngOnChanges(changes: SimpleChanges<this>): void;
 }
 
 /**
